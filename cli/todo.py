@@ -27,8 +27,7 @@ PRIORITIES = {
 def add_todo(name, desc, priority, todofile):
     filename = todofile if todofile is not None else "mytodos.txt"
     with open(filename, "a+") as f:
-        f.write("\n")
-        f.write(f"{name}: {desc} [Priority: {PRIORITIES[priority]}]")
+        f.write(f"{name}: {desc} [Priority: {PRIORITIES[priority]}]\n")
 
 @click.command()
 @click.argument("idx", type=int, required=1)
